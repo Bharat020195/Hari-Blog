@@ -24,8 +24,8 @@ const Header = () => {
         <ul className="">
             <Link href='/'><li className="lg:my-4 md:my-10 my-14 lg:m-0 md:m-0 m-4 hover:text-white" >Home</li></Link>
             <Link href='/Recipes'><li className="lg:my-4 md:my-10 my-14 lg:m-0 md:m-0 m-4 hover:text-white">Recipes</li></Link>
-            <Link href='/'><li className="lg:my-4 md:my-10 my-14 lg:m-0 md:m-0 m-4 hover:text-white">About</li></Link>
-            <Link href='/'><li className="lg:my-4 md:my-10 my-14 lg:m-0 md:m-0 m-4 hover:text-white">Subscribe</li></Link>
+            <Link href='/About'><li className="lg:my-4 md:my-10 my-14 lg:m-0 md:m-0 m-4 hover:text-white">About</li></Link>
+            <Link href='/Subscribe'><li className="lg:my-4 md:my-10 my-14 lg:m-0 md:m-0 m-4 hover:text-white">Subscribe</li></Link>
         </ul>
       </div>
 

@@ -5,10 +5,13 @@ import Logo from '../public/Logo.png'
 import Image from "next/image";
 import Search from "./Search";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 const snacks = () => {
 
     const[data, setData] = useState([])
+
+    const router = useRouter();
 
     useEffect(() =>{
 
@@ -37,37 +40,37 @@ const snacks = () => {
             src={Logo}
             alt="No Image Found"
             className="w-20 h-20" />
-            <Link href='/' className="hover:text-white hover:scale-110">Home</Link>
+            <Link href='/' className="hover:text-white hover:scale-110 duration-300">Home</Link>
     
         </div>
       <div>
         <ul className="flex space-x-10 text-white/50 font-semibold">
           <Link href='/Recipes'>
-            <li className="hover:text-white hover:scale-110">Recipes</li>
+            <li className="hover:text-white hover:scale-110 duration-300">Recipes</li>
             </Link>
           <Link href="/Tifins">
-            <li className="hover:text-white hover:scale-110">Tiffins</li>
+            <li className="hover:text-white hover:scale-110 duration-300">Tiffins</li>
           </Link>
           <Link href="/Fries">
-            <li className="hover:text-white hover:scale-110">Fry</li>
+            <li className="hover:text-white hover:scale-110 duration-300">Fry</li>
           </Link>
           <Link href="/Veg">
-            <li className="hover:text-white hover:scale-110">Veg Curries</li>
+            <li className="hover:text-white hover:scale-110 duration-300">Veg Curries</li>
           </Link>
           <Link href="/Non-veg">
-            <li className="hover:text-white hover:scale-110">Non-veg</li>
+            <li className="hover:text-white hover:scale-110 duration-300">Non-veg</li>
           </Link>
           <Link href="/Chutney">
-            <li className="hover:text-white hover:scale-110">Chutney</li>
+            <li className="hover:text-white hover:scale-110 duration-300">Chutney</li>
           </Link>
           <Link href="/Podulu">
-            <li className="hover:text-white hover:scale-110">Podulu</li>
+            <li className="hover:text-white hover:scale-110 duration-300">Podulu</li>
           </Link>
           <Link href="/Sweets">
-            <li className="hover:text-white hover:scale-110">Sweets</li>
+            <li className="hover:text-white hover:scale-110 duration-300">Sweets</li>
           </Link>
           <Link href="">
-            <li className="hover:text-white hover:scale-110">Snacks</li>
+            <li className={`hover:text-white hover:scale-110 duration-300 ${router.pathname === '/Snack' ? 'text-white' : ''}`}>Snacks</li>
           </Link>
         </ul>
       </div>

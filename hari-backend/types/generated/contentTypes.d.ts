@@ -1059,6 +1059,39 @@ export interface ApiSnackSnack extends Schema.CollectionType {
   };
 }
 
+export interface ApiSubscriberSubscriber extends Schema.CollectionType {
+  collectionName: 'subscribers';
+  info: {
+    singularName: 'subscriber';
+    pluralName: 'subscribers';
+    displayName: 'Subscriber';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    FirstName: Attribute.String & Attribute.Required;
+    LastName: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::subscriber.subscriber',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::subscriber.subscriber',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSweetSweet extends Schema.CollectionType {
   collectionName: 'sweets';
   info: {
@@ -1178,6 +1211,7 @@ declare module '@strapi/types' {
       'api::podulu.podulu': ApiPoduluPodulu;
       'api::recipe.recipe': ApiRecipeRecipe;
       'api::snack.snack': ApiSnackSnack;
+      'api::subscriber.subscriber': ApiSubscriberSubscriber;
       'api::sweet.sweet': ApiSweetSweet;
       'api::tiffin.tiffin': ApiTiffinTiffin;
       'api::veg.veg': ApiVegVeg;

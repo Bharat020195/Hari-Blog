@@ -13,8 +13,8 @@ const page = () => {
         <ul className='flex lg:space-x-20 md:space-x-20 space-x-4 cursor-pointer'>
           <Link href='/'><li className='hover:text-white/60'>Home</li></Link>
           <Link href='/Recipes'><li className='hover:text-white/60'>Recipes</li></Link>
-          <Link href='/'><li className='hover:text-white/60'>About</li></Link>
-          <Link href='/'><li className='hover:text-white/60'>Subscribe</li></Link>
+          <Link href='/About'><li className='hover:text-white/60'>About</li></Link>
+          <Link href='/Subscribe'><li className='hover:text-white/60'>Subscribe</li></Link>
         </ul>
       </div>
      <div> <Image
@@ -24,9 +24,9 @@ const page = () => {
       </div>
       <div className='absolute mt-20'> <Search/></div>
 
-   <div className="absolute text-[#f2f9f9]/90 lg:text-2xl lg:flex hidden md:text-3xl lg:w-[50%] md:w-[60%] font-serif p-10 leading-loose lg:mt-[20%] md:mt-[50%] mt-[50%] lg:left-72 border-2 border-white/30 rounded-xl justify-between items-center mx-10">
+   <div className="absolute text-[#f2f9f9]/90 lg:text-2xl lg:flex hidden md:text-3xl lg:w-[50%] md:w-[60%] font-serif p-10 leading-loose lg:mt-[20%] md:mt-[50%] mt-[50%] lg:left-72 justify-between items-center mx-10">
   
-        <div>To get notifications about latest recipes please subscribe </div> <Link href='/' className='bg-[#3b757f] p-2'> Subscribe </Link> 
+        <div>To get notifications about latest recipes please subscribe </div> <Link href='/Subscribe' className='bg-[#3b757f] p-2'> Subscribe </Link> 
     </div>
     <Latest />
 
