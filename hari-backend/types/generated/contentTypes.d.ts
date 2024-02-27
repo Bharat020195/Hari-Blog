@@ -783,19 +783,19 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiEggItemEggItem extends Schema.CollectionType {
-  collectionName: 'egg_items';
+export interface ApiChutneyChutney extends Schema.CollectionType {
+  collectionName: 'chutneys';
   info: {
-    singularName: 'egg-item';
-    pluralName: 'egg-items';
-    displayName: 'Egg-item';
+    singularName: 'chutney';
+    pluralName: 'chutneys';
+    displayName: 'Chutney';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     recipes: Attribute.Relation<
-      'api::egg-item.egg-item',
+      'api::chutney.chutney',
       'oneToMany',
       'api::recipe.recipe'
     >;
@@ -803,13 +803,13 @@ export interface ApiEggItemEggItem extends Schema.CollectionType {
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::egg-item.egg-item',
+      'api::chutney.chutney',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::egg-item.egg-item',
+      'api::chutney.chutney',
       'oneToOne',
       'admin::user'
     > &
@@ -877,40 +877,6 @@ export interface ApiLatestLatest extends Schema.CollectionType {
   };
 }
 
-export interface ApiNilavaPachadiNilavaPachadi extends Schema.CollectionType {
-  collectionName: 'nilava_pachadis';
-  info: {
-    singularName: 'nilava-pachadi';
-    pluralName: 'nilava-pachadis';
-    displayName: 'Nilava-Pachadi';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    recipes: Attribute.Relation<
-      'api::nilava-pachadi.nilava-pachadi',
-      'oneToMany',
-      'api::recipe.recipe'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::nilava-pachadi.nilava-pachadi',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::nilava-pachadi.nilava-pachadi',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiNonVegNonVeg extends Schema.CollectionType {
   collectionName: 'non_vegs';
   info: {
@@ -938,40 +904,6 @@ export interface ApiNonVegNonVeg extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::non-veg.non-veg',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPappuPappu extends Schema.CollectionType {
-  collectionName: 'pappus';
-  info: {
-    singularName: 'pappu';
-    pluralName: 'pappus';
-    displayName: 'Pappu';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    recipes: Attribute.Relation<
-      'api::pappu.pappu',
-      'oneToMany',
-      'api::recipe.recipe'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::pappu.pappu',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::pappu.pappu',
       'oneToOne',
       'admin::user'
     > &
@@ -1013,40 +945,6 @@ export interface ApiPoduluPodulu extends Schema.CollectionType {
   };
 }
 
-export interface ApiPulusuPulusu extends Schema.CollectionType {
-  collectionName: 'pulusus';
-  info: {
-    singularName: 'pulusu';
-    pluralName: 'pulusus';
-    displayName: 'Pulusu';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    recipes: Attribute.Relation<
-      'api::pulusu.pulusu',
-      'oneToMany',
-      'api::recipe.recipe'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::pulusu.pulusu',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::pulusu.pulusu',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiRecipeRecipe extends Schema.CollectionType {
   collectionName: 'recipes';
   info: {
@@ -1073,11 +971,6 @@ export interface ApiRecipeRecipe extends Schema.CollectionType {
       'manyToOne',
       'api::latest.latest'
     >;
-    roti_pachadi: Attribute.Relation<
-      'api::recipe.recipe',
-      'manyToOne',
-      'api::roti-pachadi.roti-pachadi'
-    >;
     sweet: Attribute.Relation<
       'api::recipe.recipe',
       'manyToOne',
@@ -1088,17 +981,7 @@ export interface ApiRecipeRecipe extends Schema.CollectionType {
       'manyToOne',
       'api::non-veg.non-veg'
     >;
-    nilava_pachadi: Attribute.Relation<
-      'api::recipe.recipe',
-      'manyToOne',
-      'api::nilava-pachadi.nilava-pachadi'
-    >;
     veg: Attribute.Relation<'api::recipe.recipe', 'manyToOne', 'api::veg.veg'>;
-    pulusu: Attribute.Relation<
-      'api::recipe.recipe',
-      'manyToOne',
-      'api::pulusu.pulusu'
-    >;
     podulu: Attribute.Relation<
       'api::recipe.recipe',
       'manyToOne',
@@ -1119,20 +1002,10 @@ export interface ApiRecipeRecipe extends Schema.CollectionType {
       'manyToOne',
       'api::frie.frie'
     >;
-    pappu: Attribute.Relation<
+    chutney: Attribute.Relation<
       'api::recipe.recipe',
       'manyToOne',
-      'api::pappu.pappu'
-    >;
-    rice_item: Attribute.Relation<
-      'api::recipe.recipe',
-      'manyToOne',
-      'api::rice-item.rice-item'
-    >;
-    egg_item: Attribute.Relation<
-      'api::recipe.recipe',
-      'manyToOne',
-      'api::egg-item.egg-item'
+      'api::chutney.chutney'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1145,74 +1018,6 @@ export interface ApiRecipeRecipe extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::recipe.recipe',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRiceItemRiceItem extends Schema.CollectionType {
-  collectionName: 'rice_items';
-  info: {
-    singularName: 'rice-item';
-    pluralName: 'rice-items';
-    displayName: 'Rice-item';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    recipes: Attribute.Relation<
-      'api::rice-item.rice-item',
-      'oneToMany',
-      'api::recipe.recipe'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::rice-item.rice-item',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::rice-item.rice-item',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRotiPachadiRotiPachadi extends Schema.CollectionType {
-  collectionName: 'roti_pachadis';
-  info: {
-    singularName: 'roti-pachadi';
-    pluralName: 'roti-pachadis';
-    displayName: 'Roti Pachadi';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    recipes: Attribute.Relation<
-      'api::roti-pachadi.roti-pachadi',
-      'oneToMany',
-      'api::recipe.recipe'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::roti-pachadi.roti-pachadi',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::roti-pachadi.roti-pachadi',
       'oneToOne',
       'admin::user'
     > &
@@ -1366,17 +1171,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::egg-item.egg-item': ApiEggItemEggItem;
+      'api::chutney.chutney': ApiChutneyChutney;
       'api::frie.frie': ApiFrieFrie;
       'api::latest.latest': ApiLatestLatest;
-      'api::nilava-pachadi.nilava-pachadi': ApiNilavaPachadiNilavaPachadi;
       'api::non-veg.non-veg': ApiNonVegNonVeg;
-      'api::pappu.pappu': ApiPappuPappu;
       'api::podulu.podulu': ApiPoduluPodulu;
-      'api::pulusu.pulusu': ApiPulusuPulusu;
       'api::recipe.recipe': ApiRecipeRecipe;
-      'api::rice-item.rice-item': ApiRiceItemRiceItem;
-      'api::roti-pachadi.roti-pachadi': ApiRotiPachadiRotiPachadi;
       'api::snack.snack': ApiSnackSnack;
       'api::sweet.sweet': ApiSweetSweet;
       'api::tiffin.tiffin': ApiTiffinTiffin;

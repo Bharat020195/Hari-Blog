@@ -6,7 +6,7 @@ import Image from "next/image";
 import Search from "./Search";
 import axios from "axios";
 
-const Recipes = () => {
+const snacks = () => {
 
     const[data, setData] = useState([])
 
@@ -15,10 +15,10 @@ const Recipes = () => {
         const fetchData = async () =>{
 
             try {
-                const response = await axios.get('http://127.0.0.1:1337/api/recipes?populate=deep')
+                const response = await axios.get('http://127.0.0.1:1337/api/snacks?populate=deep')
 
               
-                const responseData = response.data.data
+                const responseData =  response.data.data[0].attributes.recipes.data;
 
                 setData(responseData)
 
@@ -38,9 +38,9 @@ const Recipes = () => {
             alt="No Image Found"
             className="w-20 h-20" />
             <Link href='/' className="hover:text-white hover:scale-110">Home</Link>
-           
+    
         </div>
-      <div className="relative">
+      <div>
         <ul className="flex space-x-10 text-white/50 font-semibold">
           <Link href='/Recipes'>
             <li className="hover:text-white hover:scale-110">Recipes</li>
@@ -66,25 +66,25 @@ const Recipes = () => {
           <Link href="/Sweets">
             <li className="hover:text-white hover:scale-110">Sweets</li>
           </Link>
-          <Link href="/Snack">
+          <Link href="">
             <li className="hover:text-white hover:scale-110">Snacks</li>
           </Link>
         </ul>
       </div>
       </div>
       <div >
-        <div className="pt-20 flex justify-center"><Search/></div>
+        <div className="pt-20  flex justify-center"><Search/></div>
       </div>
       <div className="grid grid-cols-5">
-        {data.map((recipe) =>(
-             <Link href="Recipe/[recipeslug]" as={`Recipe/${recipe.attributes.Slug}`} key={recipe.id} className="mx-10 my-6" >
+        {data.map((snack) =>(
+             <Link href="Snack/[snackslug]" as={`Snack/${snack.attributes.Slug}`} key={snack.id} className="mx-10 my-6" >
                 <div className="w-full">
                     <img 
-                    src={`http://127.0.0.1:1337${recipe.attributes.Image.data.attributes.url}`}
+                    src={`http://127.0.0.1:1337${snack.attributes.Image.data.attributes.url}`}
                     alt="No Image found"
                     className="h-40 w-60 rounded-xl hover:scale-110 duration-300"/>
                 </div>
-                <div className="flex justify-center">{recipe.attributes.Title}</div>
+                <div className="flex justify-center">{snack.attributes.Title}</div>
              </Link>
 
      
@@ -95,4 +95,4 @@ const Recipes = () => {
   );
 };
 
-export default Recipes;
+export default snacks;

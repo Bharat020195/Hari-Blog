@@ -47,12 +47,6 @@
       "target": "api::latest.latest",
       "inversedBy": "recipes"
     },
-    "roti_pachadi": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::roti-pachadi.roti-pachadi",
-      "inversedBy": "recipes"
-    },
     "sweet": {
       "type": "relation",
       "relation": "manyToOne",
@@ -65,22 +59,10 @@
       "target": "api::non-veg.non-veg",
       "inversedBy": "recipes"
     },
-    "nilava_pachadi": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::nilava-pachadi.nilava-pachadi",
-      "inversedBy": "recipes"
-    },
     "veg": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::veg.veg",
-      "inversedBy": "recipes"
-    },
-    "pulusu": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::pulusu.pulusu",
       "inversedBy": "recipes"
     },
     "podulu": {
@@ -107,22 +89,10 @@
       "target": "api::frie.frie",
       "inversedBy": "recipes"
     },
-    "pappu": {
+    "chutney": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::pappu.pappu",
-      "inversedBy": "recipes"
-    },
-    "rice_item": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::rice-item.rice-item",
-      "inversedBy": "recipes"
-    },
-    "egg_item": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::egg-item.egg-item",
+      "target": "api::chutney.chutney",
       "inversedBy": "recipes"
     }
   }

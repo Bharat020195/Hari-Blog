@@ -8,7 +8,7 @@ import Header from "@/app/Header";
 import Header2 from "@/app/Header2";
 
 
-const latestblog = ({ latest }) => {
+const nonvegblog = ({ nonveg }) => {
   return (
     <div className="flex bg-[#bfe0e2] w-[100%] relative text-[#3b757f] right">
       <div className="fixed"><Header /></div>
@@ -19,7 +19,7 @@ const latestblog = ({ latest }) => {
             <Link href="/">
               <li className="hover:text-white/60">Home</li>
             </Link>
-            <Link href="/">
+            <Link href="/Recipes">
               <li className="hover:text-white/60">Recipes</li>
             </Link>
             <Link href="/">
@@ -32,24 +32,25 @@ const latestblog = ({ latest }) => {
         </div>
         <div className=" my-20 space-y-10 flex flex-col items-center">
           <div className="lg:text-2xl md:text-2xl text-xl font-semibold">
-            {latest.attributes.Title}
+            {nonveg.attributes.Title}
           </div>
           <img
-            src={`http://127.0.0.1:1337${latest.attributes.Image.data.attributes.url}`}
-            alt={latest.attributes.Title}
+            src={`http://127.0.0.1:1337${nonveg.attributes.Image.data.attributes.url}`}
+            alt={nonveg.attributes.Title}
             className="lg:w-[60%] md:w-[80%] w-full h-[500px] "
           />
+          
           <div>
             <ReactMarkdown className="lg:mx-48 md:mx-10 text-xl leading-loose">
-              {latest.attributes.Description}
+              {nonveg.attributes.Description}
             </ReactMarkdown>
             <div className="flex items-center justify-center border-2 border-black/80 lg:mx-72 md:mx-10 rounded-xl my-20 gap-10 p-4">
               <Image src={Youtube} alt="No Image Found" className="w-20 h-16" />
               <Link
-                href={latest.attributes.Url}
+                href={nonveg.attributes.Url}
                 target="_blank"
                 className="flex justify-center underline text-xl mt-4">
-                Click on this to watch {latest.attributes.Title} recipe
+                Click on this to watch {nonveg.attributes.Title} recipe
               </Link>
             </div>
           </div>
@@ -61,17 +62,17 @@ const latestblog = ({ latest }) => {
 };
 
 export async function getServerSideProps({ params }) {
-  const { latestslug } = params;
+  const { nonvegslug } = params;
   try {
     const response = await axios.get(
-      `http://127.0.0.1:1337/api/latests?populate=deep`
+      `http://127.0.0.1:1337/api/non-vegs?populate=deep`
     );
-    const latests = response.data.data[0].attributes.recipes.data;
-    const latest = latests.find(
-      (latest) => latest.attributes.Slug === latestslug
+    const nonvegs = response.data.data[0].attributes.recipes.data;
+
+    const nonveg = nonvegs.find( (nonveg) => nonveg.attributes.Slug === nonvegslug
     );
 
-    if (!latest) {
+    if (!nonveg) {
       return {
         notFound: true,
       };
@@ -79,15 +80,15 @@ export async function getServerSideProps({ params }) {
 
     return {
       props: {
-        latest,
+        nonveg,
       },
     };
   } catch (error) {
-    console.error("Unable to retrieve latest data");
+    console.error("Unable to retrieve nonveg data");
     return {
       notFound: true,
     };
   }
 }
 
-export default latestblog;
+export default nonvegblog;

@@ -3,6 +3,7 @@ import React from 'react'
 import Cover from '../public/Cover.jpeg'
 import Image from 'next/image'
 import Latest from '@/pages/Latest'
+import Search from '@/pages/Search'
 
 
 const page = () => {
@@ -21,8 +22,9 @@ const page = () => {
       alt='No Image Found' 
       className='w-[100%] lg:h-screen md:h-screen h-screen'/>
       </div>
+      <div className='absolute mt-20'> <Search/></div>
 
-   <div className="absolute text-[#f2f9f9] lg:text-3xl lg:flex hidden md:text-3xl lg:w-[50%] md:w-[60%] font-serif p-10 leading-loose lg:mt-[20%] md:mt-[50%] mt-[50%] lg:left-72 border-2 border-white rounded-xl justify-between items-center mx-10">
+   <div className="absolute text-[#f2f9f9]/90 lg:text-2xl lg:flex hidden md:text-3xl lg:w-[50%] md:w-[60%] font-serif p-10 leading-loose lg:mt-[20%] md:mt-[50%] mt-[50%] lg:left-72 border-2 border-white/30 rounded-xl justify-between items-center mx-10">
   
         <div>To get notifications about latest recipes please subscribe </div> <Link href='/' className='bg-[#3b757f] p-2'> Subscribe </Link> 
     </div>
