@@ -1,0 +1,129 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "singularName": "recipe",
+    "pluralName": "recipes",
+    "displayName": "Recipe"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 30
+    },
+    "Description": {
+      "type": "richtext",
+      "required": true
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "Slug": {
+      "type": "string",
+      "required": true
+    },
+    "Url": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "latest": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::latest.latest",
+      "inversedBy": "recipes"
+    },
+    "roti_pachadi": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::roti-pachadi.roti-pachadi",
+      "inversedBy": "recipes"
+    },
+    "sweet": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sweet.sweet",
+      "inversedBy": "recipes"
+    },
+    "non_veg": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::non-veg.non-veg",
+      "inversedBy": "recipes"
+    },
+    "nilava_pachadi": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::nilava-pachadi.nilava-pachadi",
+      "inversedBy": "recipes"
+    },
+    "veg": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::veg.veg",
+      "inversedBy": "recipes"
+    },
+    "pulusu": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pulusu.pulusu",
+      "inversedBy": "recipes"
+    },
+    "podulu": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::podulu.podulu",
+      "inversedBy": "recipes"
+    },
+    "snack": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::snack.snack",
+      "inversedBy": "recipes"
+    },
+    "tiffin": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tiffin.tiffin",
+      "inversedBy": "recipes"
+    },
+    "fry": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::frie.frie",
+      "inversedBy": "recipes"
+    },
+    "pappu": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pappu.pappu",
+      "inversedBy": "recipes"
+    },
+    "rice_item": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rice-item.rice-item",
+      "inversedBy": "recipes"
+    },
+    "egg_item": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::egg-item.egg-item",
+      "inversedBy": "recipes"
+    }
+  }
+}

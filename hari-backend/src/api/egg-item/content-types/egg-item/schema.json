@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "egg_items",
+  "info": {
+    "singularName": "egg-item",
+    "pluralName": "egg-items",
+    "displayName": "Egg-item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "egg_item"
+    }
+  }
+}

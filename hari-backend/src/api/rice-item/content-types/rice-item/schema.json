@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rice_items",
+  "info": {
+    "singularName": "rice-item",
+    "pluralName": "rice-items",
+    "displayName": "Rice-item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "rice_item"
+    }
+  }
+}

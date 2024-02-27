@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "latests",
+  "info": {
+    "singularName": "latest",
+    "pluralName": "latests",
+    "displayName": "Latest"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "latest"
+    }
+  }
+}

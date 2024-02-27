@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nilava_pachadis",
+  "info": {
+    "singularName": "nilava-pachadi",
+    "pluralName": "nilava-pachadis",
+    "displayName": "Nilava-Pachadi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "nilava_pachadi"
+    }
+  }
+}

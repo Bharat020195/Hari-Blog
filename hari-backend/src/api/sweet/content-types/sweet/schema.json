@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sweets",
+  "info": {
+    "singularName": "sweet",
+    "pluralName": "sweets",
+    "displayName": "Sweet"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "sweet"
+    }
+  }
+}

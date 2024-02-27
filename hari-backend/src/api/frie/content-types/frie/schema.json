@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fries",
+  "info": {
+    "singularName": "frie",
+    "pluralName": "fries",
+    "displayName": "Fries"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "fry"
+    }
+  }
+}
