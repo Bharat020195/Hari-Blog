@@ -67,7 +67,7 @@ const Search = () => {
       <div>
         <IoSearchSharp
           size={25}
-          className="hover:text-[#FFA2A6] cursor-pointer"
+          className="hover:text-[#FFA2A6] cursor-pointer text-white"
         />
       </div>
     </div>

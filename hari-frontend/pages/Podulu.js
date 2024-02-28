@@ -41,6 +41,7 @@ const pappus = () => {
             alt="No Image Found"
             className="w-20 h-20" />
             <Link href='/' className="hover:text-white hover:scale-110 duration-300">Home</Link>
+            <Link href='/Subscribe' className="bg-[#bfe0e2] p-2 rounded-xl text-black hover:scale-110 duration-500">Subscribe</Link>
     
         </div>
       <div>
